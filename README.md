@@ -12,3 +12,9 @@ Para lograr lo mencionado anteriormente sin AOP tenemos que ir metodo por metodo
 da como resultado un codigo un poco mas sucio ya que hay lineas de codigo que interfieren con la fluides de cada uno de nuestros
 metodos, ademas de que el metodo empieza a terner un responsabilidad la cual no es de cada metodo que es logiar esta trazabilidad, 
 Por otro lado vemos que se pueden empezar a repetir lineas de codigo muy similares.
+
+Con este ejemplo podemos ver como una responsabilidad transversal se puede volver un problema para nuestro codigo ya que nos
+obliga a incumplir algunas buenas practicas de programacion. Es aqui donde es importante conocer diferentes herramientas que 
+nos permitan enfrentar estas situacion manteniendo buenas practicas de programacion. En este caso podemos utilizar programacion
+orienda a aspectos para llevar todo esta funcionalidad de trazabilidad a un modulo completamente independiente a nuestro codigo.
+Esta implementacion la podremos ver en la otra rama.
