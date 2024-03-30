@@ -1,33 +1,14 @@
-# AOP - Aspect Oriented Programming (Programacion Oriendtada a Aspectos)
-La programacion oriendata a aspectos es un poderozo paradigma que permite complementar la programacion orienta a objetos.
+# Proyecto sin Programacion Orientada a Aspectos
 
-Este paradigma esta enfocado en la modularizacion de operaciones transversales, es decir, en agrupar las operaciones
-que se necesiten hacer en diferentes parates de su codigo y tenerlas separadas en un modulo completamente independiente a 
-su codigo.
+En este rama vemos un proyecto que simula una arquitectura en capas, tenemos las capas de controlador, servicio y data. Para
+el ejemplo utilizamos una entidad llamada Producto la cual tiene una informacion basica para hacer un par de operaciones CRUD.
+Para uso del ejemplo se utiliza un Array para simular el almacenamiento en BD.
 
-Supongamos que usted tiene un Clase la cual se encarga de realizar las operacion criticas e importantes en su codigo y es
-de suma importancia registrar en los logs los valores de los atributos que llegan a cada metodo y la respuesta
-de cada uno de ellos con el objetivo de dejar una trazabilidad. Si penzamos una manera rapida de hacer lo mencionado
-anteriormente, llegamos a la conclusion de que es necesario colocar una linea de codigo al principio y al final de cada 
-uno de los metodos, con el objetivo de imprimir o registar en los logs los valores que son necesarios. Esta forma nos 
-permitiria solucionar la necesidad que se plantea, pero nos obligaria a escribir lineas de codigo que contaminan la legibilidad
-de nuestro codigo.
+Supongamos que queremos dar trazabilidad entra los metodos de nuestra aplicacion, para esto debemos registrar en cada metodo
+el inicio y el fin del metodo, esto con el objetivo de dejar trazabilidad en los logs y posteriormente sirvan para el analisis 
+de insidentes. 
 
-Pues con la programacion orientada a aspectos podemos dar una solucion mas modular y sin contaminar nuestro codigo con lineas
-de codigo que tal vez se puedan repetir en multiples secciones de nuestro codigo. Basicamente con la AOP podemos indicar en
-que secciones/partes de nuestro codigo queremos que se ejecuten ciertos comportamientos que son transversales en nuestra
-aplicacion.
-
-algunos conceptos basicos e importantes en la AOP son:
-- Aspect (Aspecto): Hace referencia a la Clase que encapsula o modulariza las acciones que queremos implementar de manera
-transversal.
-- Advice (Consejo): Es la accion que queremos que se realice en cierto seccion o punto de nuestro codigo. Basicamente son
-los metodos que estan dentro de nuestros Aspectos. Estos se pueden ejecutar antes, despues, alrededor y despues del lanzamiento.
-- Pointcut (punto de corte): Es una expresion que indica que punto de nuestro codigo se aplicara el consejo programado.
-- Joint Point (Punto de union): Es un punto especifico en la ejecucion del codigo, como un metodo, un constructor, un acceso a
-parametros.
-
-En este respositorio construiremos un proyecto basico en una arquitectura de capas, en una rama, haremos la construccion sin utilizar
-AOP y especificaremos y registraremos logs de trazabilidad en los metodos de las diferentes capas. Por ultimo, en otra rama,
-construiremos el mismo proyecto haciendo uso de la AOP para identificar como se utiliza y el gran beneficio que puede tener
-este paradigma en nuestros proyectos.
+Para lograr lo mencionado anteriormente sin AOP tenemos que ir metodo por metodo logiando el inicio y el fin de cada uno. Esto 
+da como resultado un codigo un poco mas sucio ya que hay lineas de codigo que interfieren con la fluides de cada uno de nuestros
+metodos, ademas de que el metodo empieza a terner un responsabilidad la cual no es de cada metodo que es logiar esta trazabilidad, 
+Por otro lado vemos que se pueden empezar a repetir lineas de codigo muy similares.

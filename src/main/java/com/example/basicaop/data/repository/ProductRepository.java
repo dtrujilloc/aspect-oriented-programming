@@ -1,6 +1,7 @@
 package com.example.basicaop.data.repository;
 
 import com.example.basicaop.data.model.Product;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -8,6 +9,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
+@Slf4j
 @Repository
 public class ProductRepository {
 
@@ -24,14 +26,21 @@ public class ProductRepository {
     }
 
     public List<Product> getAllProducts() {
-        return productList;
+        log.info("**> Start getAllProducts");
+        List<Product> products = productList;
+        log.info("<** Finish getAllProducts");
+        return products;
     }
 
     public Product getProductById(Integer id) {
-        return productList.stream().filter(product -> Objects.equals(product.getId(), id)).findFirst().orElse(null);
+        log.info("**> Start getProductById");
+        Product product = productList.stream().filter(productTemp -> Objects.equals(productTemp.getId(), id)).findFirst().orElse(null);
+        log.info("<** Finish getProductById");
+        return product;
     }
 
     public Product saveProduct(Product product) {
+        log.info("**> Start saveProduct");
 
         if(productList.isEmpty())
         {
@@ -45,10 +54,12 @@ public class ProductRepository {
 
         productList.add(product);
 
+        log.info("<** Finish saveProduct");
         return product;
     }
 
     public Product deleteProduct(Integer id) {
+        log.info("**> Start deleteProduct");
         Product product = getProductById(id);
 
         if (product != null) {
@@ -58,6 +69,7 @@ public class ProductRepository {
             throw new RuntimeException("The product doesn't exist");
         }
 
+        log.info("<** Finish deleteProduct");
         return product;
     }
 
