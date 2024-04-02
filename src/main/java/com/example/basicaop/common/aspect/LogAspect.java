@@ -8,6 +8,10 @@ import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
 
+/**
+ * Clase que representa un Aspecto, este aspecto se encarga de logear en los metodos de las diferentes capas los mensajes
+ * de trazabilidad de los metodos.
+ */
 @Slf4j
 @Aspect
 @Component
